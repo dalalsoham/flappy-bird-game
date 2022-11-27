@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Flappy Bird Evolution</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <audio id="thump-audio">
+    <source src="assets/thump.mp3" type="audio/mpeg">
+    <source src="assets/thump.mp3" type="audio/mpeg">
+  </audio>
+</head>
+
+<body>
+  <div id="panel">
+    <p id="generation">Generation:</p>
+    <p id="pipes-passed">Score:</p>
+    <p id="survivors">Survivors:</p>
+
+    <div id="checkboxes">
+      <label><input type="checkbox" id="paused"></input>Pause</label>
+    </div>
+
+    <div id="number-inputs">
+      <div>
+        <label for="mutation-chance">Mutate rate:</label>
+        <input type="number" min="0" max="1" step="0.01" id="mutation-chance"></input>
+      </div>
+
+      <div>
+        <label for="mutation-amount">Mut. amount:</label>
+        <input type="number" min="0" max="2" step="0.01" id="mutation-amount"></input>
+      </div>
+
+      <div>
+        <label for="pipe-gap">Pipe gap:</label>
+        <input type="range" min="50" max="300" step="0.01" id="pipe-gap"></input>
+      </div>
+    </div>
+
+    <div id="score-graph-display">
+      <p>Score per generation:</p>
+      <canvas id="score-graph"></canvas>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="panel.js"></script>
+  <script src="simulation.js"></script>
+  <script src="network.js"></script>
+</body>
+
+</html>
